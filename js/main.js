@@ -36,51 +36,6 @@ const TRANSLATIONS = {
     'lang.label':'// lingüística','lang.title':'Idiomas','lang.spanish':'Español','lang.english':'Inglés','lang.french':'Francés','lang.german':'Alemán','lang.japanese':'Japonés','lang.native':'Nativo / Bilingüe','lang.native100':'Nativo / Bilingüe (100%)','lang.limited':'Trabajo Limitado (65%)','lang.elementary':'Elemental (35%)',
     'contact.label':'// conectar','contact.title':'Contáctame','contact.subtitle':'Abierto a roles de liderazgo senior, consultoría y colaboración.','contact.linkedin':'LinkedIn · +6K seguidores','contact.form.name':'Nombre','contact.form.name_ph':'Tu nombre','contact.form.email':'Correo','contact.form.email_ph':'tu@ejemplo.com','contact.form.message':'Mensaje','contact.form.message_ph':'¿En qué puedo ayudarte?','contact.form.submit':'Enviar mensaje',
     'footer.built':'Hecho con ♥ &nbsp;·&nbsp; Edsson Madrigal © 2025 &nbsp;·&nbsp;'
-  },
-  fr: {
-    'nav.about':'À propos','nav.experience':'Expérience','nav.skills':'Compétences','nav.education':'Formation','nav.certs':'Certif.','nav.contact':'Contact',
-    'hero.desc':'Actuellement <strong>VP IT</strong> avec <strong>plus de 15 ans</strong> d\'expérience à construire et faire évoluer des équipes performantes aux États-Unis et au Mexique 🌎. A dirigé le développement de plateformes logicielles pour certains des <strong>plus grands casinos et chaînes hôtelières du monde</strong> 🎰, en concevant des <strong>solutions modernes d\'entrepôt de données</strong> 📊, en transformant des systèmes monolithiques en plateformes modulaires ⚙️ et en déployant des <strong>applications agentiques avancées pilotées par l\'IA</strong> 🤖. Bilan éprouvé en tant que fondateur et dirigeant technologique, aidant des startups à se développer en organisations d\'entreprise de <strong>plus de 90 personnes</strong> 🚀, tout en livrant des produits utilisés par <strong>des millions d\'utilisateurs</strong> 👥 et en soutenant <strong>des millions de dollars</strong> de volume de transactions 💰.'une startup de 5 personnes à un leader du secteur de&nbsp;<strong>100 personnes</strong>.',
-    'hero.years':'Ans d\'exp.','hero.apps':'Apps créées','hero.downloads':'Télécharg.','hero.team':'Équipe jusqu\'à','hero.certs_count':'Certifications',
-    'hero.btn_contact':'Me contacter →','hero.btn_portfolio':'Portfolio ↗','hero.btn_github':'GitHub ↗',
-    'clients.label':'Approuvé par des marques hôtelières de renommée mondiale',
-    'exp.label':'// carrière','exp.title':'Expérience',
-    'exp.job1.role':'Vice-Président du Développement Technologique','exp.job2.role':'Architecte Senior IT','exp.job3.role':'Ingénieur Full Stack','exp.job4.role':'Co-Fondateur','exp.job5.role':'Maître de Conférences','exp.job6.role':'Webmaster & Support Technique','exp.job7.role':'Webmaster & Gestionnaire de Contenu',
-    'skills.label':'// expertise','skills.title':'Compétences','skills.cloud':'Cloud & Infrastructure','skills.frontend':'Interfaces (Frontend)','skills.backend':'Backend & APIs','skills.mobile':'Développement Mobile','skills.ai':'IA & Science des Données','skills.blockchain':'Blockchain & Jeux Vidéo','skills.security':'Sécurité & DevOps','skills.leadership':'Leadership & Marketing',
-    'edu.label':'// académique','edu.title':'Formation','edu.d1':'Master en Administration des Affaires (MBA)','edu.d2':'Master en Développement d\'Applications Mobiles','edu.d3':'Licence en Informatique',
-    'certs.label':'// accréditations','certs.title':'Certifications','certs.more':'75+ certifications supplémentaires',
-    'lang.label':'// linguistique','lang.title':'Langues','lang.spanish':'Espagnol','lang.english':'Anglais','lang.french':'Français','lang.german':'Allemand','lang.japanese':'Japonais','lang.native':'Natif / Bilingue','lang.native100':'Natif / Bilingue (100%)','lang.limited':'Professionnel Limité (65%)','lang.elementary':'Élémentaire (35%)',
-    'contact.label':'// contact','contact.title':'Prenez Contact','contact.subtitle':'Ouvert aux rôles de direction senior, conseil et collaboration.','contact.linkedin':'LinkedIn · +6K abonnés','contact.form.name':'Nom','contact.form.name_ph':'Votre nom','contact.form.email':'E-mail','contact.form.email_ph':'vous@exemple.com','contact.form.message':'Message','contact.form.message_ph':'Qu\'avez-vous en tête ?','contact.form.submit':'Envoyer le message',
-    'footer.built':'Fait avec ♥ &nbsp;·&nbsp; Edsson Madrigal © 2025 &nbsp;·&nbsp;'
-  },
-  de: {
-    'nav.about':'Über mich','nav.experience':'Erfahrung','nav.skills':'Fähigkeiten','nav.education':'Ausbildung','nav.certs':'Zertif.','nav.contact':'Kontakt',
-    'hero.desc':'Derzeit <strong>VP IT</strong> mit <strong>über 15 Jahren</strong> Erfahrung im Aufbau leistungsstarker Teams in den USA und Mexiko 🌎. Leitete die Entwicklung von Software-Plattformen für einige der <strong>weltweit größten Casinos und Hotelketten</strong> 🎰, entwarf moderne <strong>Data-Warehouse-Lösungen</strong> 📊, transformierte monolithische Systeme in modulare Plattformen ⚙️ und setzte fortschrittliche <strong>KI-gestützte agentische Anwendungen</strong> ein 🤖. Nachgewiesene Erfolgsgeschichte als Gründer und Technologiemanager, der Startups zu Unternehmensorganisationen von <strong>über 90 Mitarbeitern</strong> ausgebaut hat 🚀 — bei gleichzeitiger Lieferung von Produkten für <strong>Millionen von Nutzern</strong> 👥 und Unterstützung von <strong>Millionen Dollar</strong> im Transaktionsvolumen 💰.',
-    'hero.years':'Jahre Erf.','hero.apps':'Apps erstellt','hero.downloads':'Downloads','hero.team':'Team skaliert auf','hero.certs_count':'Zertifizierungen',
-    'hero.btn_contact':'Kontakt aufnehmen →','hero.btn_portfolio':'Portfolio ↗','hero.btn_github':'GitHub ↗',
-    'clients.label':'Vertrauen führender Hospitality-Marken weltweit',
-    'exp.label':'// karriere','exp.title':'Erfahrung',
-    'exp.job1.role':'Vizepräsident für Technologieentwicklung','exp.job2.role':'Senior IT-Architekt','exp.job3.role':'Full Stack Ingenieur','exp.job4.role':'Mitgründer','exp.job5.role':'Gastdozent','exp.job6.role':'Webmaster & Technischer Support','exp.job7.role':'Webmaster & Content Manager',
-    'skills.label':'// kompetenzen','skills.title':'Fähigkeiten','skills.cloud':'Cloud & Infrastruktur','skills.frontend':'Frontend','skills.backend':'Backend & APIs','skills.mobile':'Mobile Entwicklung','skills.ai':'KI & Data Science','skills.blockchain':'Blockchain & Game Dev','skills.security':'Sicherheit & DevOps','skills.leadership':'Führung & Marketing',
-    'edu.label':'// akademisch','edu.title':'Ausbildung','edu.d1':'Master of Business Administration (MBA)','edu.d2':'MSc — Mobile Anwendungsentwicklung','edu.d3':'BSc — Informatik',
-    'certs.label':'// qualifikationen','certs.title':'Zertifizierungen','certs.more':'75+ weitere Zertifizierungen',
-    'lang.label':'// sprachen','lang.title':'Sprachen','lang.spanish':'Spanisch','lang.english':'Englisch','lang.french':'Französisch','lang.german':'Deutsch','lang.japanese':'Japanisch','lang.native':'Muttersprache / Zweisprachig','lang.native100':'Muttersprache / Zweisprachig (100%)','lang.limited':'Begrenzte Arbeitskenntnis (65%)','lang.elementary':'Grundkenntnisse (35%)',
-    'contact.label':'// kontakt','contact.title':'Kontakt Aufnehmen','contact.subtitle':'Offen für leitende Positionen, Beratung und Zusammenarbeit.','contact.linkedin':'LinkedIn · +6K Follower','contact.form.name':'Name','contact.form.name_ph':'Ihr Name','contact.form.email':'E-Mail','contact.form.email_ph':'sie@beispiel.de','contact.form.message':'Nachricht','contact.form.message_ph':'Was liegt Ihnen am Herzen?','contact.form.submit':'Nachricht senden',
-    'footer.built':'Erstellt mit ♥ &nbsp;·&nbsp; Edsson Madrigal © 2025 &nbsp;·&nbsp;'
-  },
-  ja: {
-    'nav.about':'概要','nav.experience':'経験','nav.skills':'スキル','nav.education':'学歴','nav.certs':'資格','nav.contact':'連絡先',
-    'hero.desc':'現在、米国およびメキシコで<strong>15年以上</strong>にわたりハイパフォーマンスなチームを構築・拡大してきた<strong>VP of IT</strong> 🌎。世界最大級の<strong>カジノおよびホテルチェーン</strong>を支えるソフトウェアプラットフォームの開発を主導し 🎰、最新の<strong>データウェアハウスソリューション</strong>を設計 📊、モノリシックシステムをモジュラープラットフォームへ変革 ⚙️、高度な<strong>AI駆動型エージェントアプリケーション</strong>を展開 🤖。創業者・技術経営者として実績を持ち、スタートアップを<strong>90名以上</strong>の規律あるエンタープライズ組織へと成長させ 🚀、<strong>数百万ユーザー</strong>に利用される製品を提供し 👥、<strong>数百万ドル</strong>のトランザクション量をサポート 💰。',
-    'hero.years':'経験年数','hero.apps':'開発アプリ','hero.downloads':'ダウンロード数','hero.team':'チーム規模','hero.certs_count':'資格・認定数',
-    'hero.btn_contact':'お問い合わせ →','hero.btn_portfolio':'ポートフォリオ ↗','hero.btn_github':'GitHub ↗',
-    'clients.label':'世界クラスのホスピタリティブランドから信頼される',
-    'exp.label':'// キャリア','exp.title':'経験',
-    'exp.job1.role':'テクノロジー開発担当副社長','exp.job2.role':'シニア IT アーキテクト','exp.job3.role':'フルスタックエンジニア','exp.job4.role':'共同創業者','exp.job5.role':'准教授','exp.job6.role':'ウェブマスター・テクニカルサポート','exp.job7.role':'ウェブマスター・コンテンツマネージャー',
-    'skills.label':'// 専門知識','skills.title':'スキル','skills.cloud':'クラウド・インフラ','skills.frontend':'フロントエンド','skills.backend':'バックエンド・API','skills.mobile':'モバイル開発','skills.ai':'AI・データサイエンス','skills.blockchain':'ブロックチェーン・ゲーム開発','skills.security':'セキュリティ・DevOps','skills.leadership':'リーダーシップ・マーケティング',
-    'edu.label':'// 学歴','edu.title':'学歴','edu.d1':'経営学修士（MBA）','edu.d2':'理学修士 — モバイルアプリ開発','edu.d3':'理学士 — コンピュータサイエンス',
-    'certs.label':'// 資格','certs.title':'資格・認定','certs.more':'75以上の追加資格',
-    'lang.label':'// 言語','lang.title':'言語','lang.spanish':'スペイン語','lang.english':'英語','lang.french':'フランス語','lang.german':'ドイツ語','lang.japanese':'日本語','lang.native':'ネイティブ / バイリンガル','lang.native100':'ネイティブ / バイリンガル（100%）','lang.limited':'実務限定（65%）','lang.elementary':'初級（35%）',
-    'contact.label':'// コネクト','contact.title':'お問い合わせ','contact.subtitle':'シニアリーダーシップ職、コンサルティング、協業を歓迎します。','contact.linkedin':'LinkedIn · 6K+ フォロワー','contact.form.name':'お名前','contact.form.name_ph':'お名前を入力','contact.form.email':'メールアドレス','contact.form.email_ph':'you@example.com','contact.form.message':'メッセージ','contact.form.message_ph':'ご用件をお聞かせください','contact.form.submit':'メッセージを送る',
-    'footer.built':'♥ を込めて &nbsp;·&nbsp; Edsson Madrigal © 2025 &nbsp;·&nbsp;'
   }
 };
 
