@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:edsson.me)",
+      "WebFetch(domain:www.urvenue.com)",
+      "Bash(gh api:*)",
+      "Bash(python3:*)",
+      "Bash(head -20 grep -n \"btn_portfolio\\\\|btn-outline\\\\|hero-btns\\\\|Portfolio\\\\|portfolio\" \"/Users/edssonmadrigal/Downloads/cv edsson/index2.html\")",
+      "Bash(head -30 grep -n \"cert\\\\|Cert\\\\|certs\\\\|75+\" \"/Users/edssonmadrigal/Downloads/cv edsson/index2.html\")",
+      "Bash(head -20 echo \"---\" grep -n \"Edsson\\\\|UrVenue\\\\|casino\\\\|VP of IT\\\\|6K+\" \"/Users/edssonmadrigal/Downloads/cv mel/js/js.js\")",
+      "Bash(head -20 echo \"---\" grep -n \"Edsson\\\\|2025\" \"/Users/edssonmadrigal/Downloads/cv mel/index.html\")",
+      "Bash(node --check \"/Users/edssonmadrigal/Downloads/cv mel/js/js.js\")",
+      "Bash(gh repo:*)"
+    ]
+  }
+}
