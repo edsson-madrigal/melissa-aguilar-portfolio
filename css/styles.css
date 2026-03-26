@@ -201,35 +201,36 @@
 	}
 
 	/* ═══════════════════════════════
-       HERO TERMINAL NAME
+       HERO NAME — staggered reveal
     ═══════════════════════════════ */
-	@keyframes blink {
-
-		0%,
-		100% {
-			opacity: 1
-		}
-
-		50% {
-			opacity: 0
-		}
-	}
-
 	.hero-name {
-		font-family: 'Fira Code', monospace !important;
-		letter-spacing: 0 !important;
+		font-family: 'Inter', sans-serif !important;
+		letter-spacing: -0.02em !important;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		gap: 0 0.35em;
 	}
 
-	.term-prompt {
-		-webkit-text-fill-color: var(--accent);
-		color: var(--accent);
+	.hero-word {
+		display: inline-block;
+		opacity: 0;
+		transform: translateY(28px);
+		transition: opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1),
+		            transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
 	}
 
-	.term-cursor {
-		-webkit-text-fill-color: var(--accent2);
-		color: var(--accent2);
-		animation: blink 0.75s step-end infinite;
-		font-weight: 400;
+	.hero-word.revealed {
+		opacity: 1;
+		transform: translateY(0);
+	}
+
+	/* First word gets accent gradient */
+	.hero-word--first {
+		background: linear-gradient(135deg, var(--accent), var(--accent2));
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		background-clip: text;
 	}
 
 	/* ═══════════════════════════════
@@ -505,10 +506,6 @@
 		font-weight: 800;
 		letter-spacing: -0.03em;
 		line-height: 1.2;
-		background: linear-gradient(135deg, var(--text) 0%, var(--accent2) 50%, var(--accent3) 100%);
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-		background-clip: text;
 		margin-bottom: 1rem;
 		padding-bottom: 0.05em;
 	}

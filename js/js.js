@@ -174,20 +174,16 @@
 	/* ══════════════════════════════
 		 HERO TERMINAL TYPEWRITER
 	══════════════════════════════ */
-	const heroTyped = document.getElementById('hero-typed');
-	const heroCursor = document.getElementById('hero-cursor');
-	const heroName = window.innerWidth <= 768 ? 'Melissa' : 'Melissa Aguilar';
-	let hi = 0;
-
-	function heroType() {
-		if (hi <= heroName.length) {
-			heroTyped.textContent = heroName.slice(0, hi);
-			hi++;
-			setTimeout(heroType, hi === 1 ? 300 : 90);
-		}
-		// cursor keeps blinking via CSS animation after typing ends
-	}
-	setTimeout(heroType, 400);
+	/* Staggered word reveal — elegant marketing entrance */
+	(function initHeroReveal() {
+		const w1 = document.getElementById('hero-word-1');
+		const w2 = document.getElementById('hero-word-2');
+		if (!w1 || !w2) return;
+		setTimeout(() => {
+			w1.classList.add('revealed');
+			setTimeout(() => w2.classList.add('revealed'), 220);
+		}, 350);
+	})();
 
 	/* ══════════════════════════════
 		 ROTATING TITLE
@@ -400,37 +396,42 @@
 	document.head.appendChild(style);
 
 /* ══════════════════════════════
-   ANIMATED BACKGROUND — circuit node network
-   Reads --accent CSS variable so it auto-adapts
-   to every palette and light/dark mode switch.
+   ANIMATED BACKGROUND — floating marketing words
+   Reads --accent CSS variable, adapts to palette/theme switches.
 ══════════════════════════════ */
 (function initBgCanvas() {
 	const canvas = document.getElementById('bg-canvas');
 	if (!canvas) return;
 	const ctx = canvas.getContext('2d');
 
-	let W, H, nodes = [];
-	let mouseX = W / 2, mouseY = H / 2;
-	let accentColor = '#6c63ff';
+	const WORDS = [
+		'Brand', 'Strategy', 'Design', 'Create', 'Inspire', 'Impact',
+		'Campaign', 'Story', 'Vision', 'Market', 'Connect', 'Growth',
+		'Identity', 'Content', 'Engage', 'Creative', 'Launch', 'Trend',
+		'Audience', 'Narrative', 'Value', 'Purpose', 'Emotion', 'Experience',
+		'✦', '◆', '✿', '◉', '✦', '◆'
+	];
+
+	let W, H, particles = [];
+	let mouseX = -1000, mouseY = -1000;
+	let accentColor = '#e91e8c';
 	let isLight = false;
 	let colorTick = 0;
 
 	function readAccent() {
-		const style = getComputedStyle(document.documentElement);
-		accentColor = style.getPropertyValue('--accent').trim() || '#6c63ff';
+		const s = getComputedStyle(document.documentElement);
+		accentColor = s.getPropertyValue('--accent').trim() || '#e91e8c';
 		isLight = document.documentElement.classList.contains('light');
 	}
 
-	// Convert hex/rgb accent to rgba with given alpha
 	function accentRgba(alpha) {
-		// accent may be hex or rgb(); normalise to rgba
 		const tmp = document.createElement('div');
 		tmp.style.color = accentColor;
 		document.body.appendChild(tmp);
-		const computed = getComputedStyle(tmp).color; // "rgb(r, g, b)"
+		const rgb = getComputedStyle(tmp).color;
 		document.body.removeChild(tmp);
-		const m = computed.match(/\d+/g);
-		if (!m) return `rgba(108,99,255,${alpha})`;
+		const m = rgb.match(/\d+/g);
+		if (!m) return `rgba(233,30,140,${alpha})`;
 		return `rgba(${m[0]},${m[1]},${m[2]},${alpha})`;
 	}
 
@@ -439,107 +440,91 @@
 		H = canvas.height = window.innerHeight;
 	}
 
-	function makeNode() {
+	function makeParticle() {
+		const word = WORDS[Math.floor(Math.random() * WORDS.length)];
+		const isSymbol = ['✦','◆','✿','◉'].includes(word);
 		return {
-			x:   Math.random() * W,
-			y:   Math.random() * H,
-			vx:  (Math.random() - 0.5) * 0.3,
-			vy:  (Math.random() - 0.5) * 0.3,
-			r:   Math.random() * 1.5 + 0.8,
-			// random phase so nodes pulse out of sync
-			phase: Math.random() * Math.PI * 2
+			word,
+			x:     Math.random() * W,
+			y:     Math.random() * H,
+			vx:    (Math.random() - 0.5) * 0.18,
+			vy:    (Math.random() - 0.5) * 0.18,
+			size:  isSymbol
+				? Math.random() * 8 + 6
+				: Math.random() * 8 + 10,
+			alpha: Math.random() * 0.18 + 0.04,
+			phase: Math.random() * Math.PI * 2,
+			rot:   (Math.random() - 0.5) * 0.06
 		};
 	}
 
 	function init() {
 		resize();
 		readAccent();
-		nodes = [];
-		const count = Math.min(120, Math.floor((W * H) / 10000));
-		for (let i = 0; i < count; i++) nodes.push(makeNode());
+		particles = [];
+		const count = Math.min(55, Math.floor((W * H) / 22000));
+		for (let i = 0; i < count; i++) particles.push(makeParticle());
 	}
 
 	let t = 0;
 	function draw() {
-		t += 0.008;
+		t += 0.005;
 		ctx.clearRect(0, 0, W, H);
-
-		// Re-read accent colour every ~60 frames so palette switches apply live
 		colorTick++;
 		if (colorTick % 60 === 0) readAccent();
 
-		const maxDist  = 160;
-		const nodAlpha = isLight ? 0.45 : 0.7;
-		const lineAlpha = isLight ? 0.18 : 0.35;
+		const maxAlpha = isLight ? 0.12 : 0.22;
 
-		for (let i = 0; i < nodes.length; i++) {
-			const n = nodes[i];
-
-			// Very slight drift toward cursor (subtle)
-			const dx = mouseX - n.x;
-			const dy = mouseY - n.y;
+		particles.forEach(p => {
+			// Gentle mouse repel
+			const dx = p.x - mouseX;
+			const dy = p.y - mouseY;
 			const dist = Math.hypot(dx, dy);
-			if (dist < 200 && dist > 0) {
-				n.vx += (dx / dist) * 0.004;
-				n.vy += (dy / dist) * 0.004;
+			if (dist < 140 && dist > 0) {
+				const push = (140 - dist) / 140 * 0.012;
+				p.vx += (dx / dist) * push;
+				p.vy += (dy / dist) * push;
 			}
 
 			// Speed cap + damping
-			const spd = Math.hypot(n.vx, n.vy);
-			if (spd > 0.8) { n.vx = n.vx / spd * 0.8; n.vy = n.vy / spd * 0.8; }
-			n.vx *= 0.995;
-			n.vy *= 0.995;
+			const spd = Math.hypot(p.vx, p.vy);
+			if (spd > 0.5) { p.vx = p.vx / spd * 0.5; p.vy = p.vy / spd * 0.5; }
+			p.vx *= 0.996;
+			p.vy *= 0.996;
 
-			n.x += n.vx;
-			n.y += n.vy;
+			p.x += p.vx;
+			p.y += p.vy;
 
-			// Wrap edges
-			if (n.x < -8)    n.x = W + 8;
-			if (n.x > W + 8) n.x = -8;
-			if (n.y < -8)    n.y = H + 8;
-			if (n.y > H + 8) n.y = -8;
+			// Wrap
+			if (p.x < -80)    p.x = W + 80;
+			if (p.x > W + 80) p.x = -80;
+			if (p.y < -30)    p.y = H + 30;
+			if (p.y > H + 30) p.y = -30;
 
-			// Pulsing alpha
-			const pulse = 0.6 + 0.4 * Math.sin(t * 1.5 + n.phase);
+			// Gentle breathing alpha
+			const breathe = 0.65 + 0.35 * Math.sin(t * 0.8 + p.phase);
+			const a = Math.min(p.alpha * breathe, maxAlpha);
 
-			// Draw node
-			ctx.beginPath();
-			ctx.arc(n.x, n.y, n.r * pulse, 0, Math.PI * 2);
-			ctx.fillStyle = accentRgba(nodAlpha * pulse);
-			ctx.shadowBlur  = isLight ? 4 : 10;
-			ctx.shadowColor = accentRgba(0.4);
-			ctx.fill();
-			ctx.shadowBlur = 0;
-
-			// Draw connecting lines
-			for (let j = i + 1; j < nodes.length; j++) {
-				const n2 = nodes[j];
-				const ldx = n.x - n2.x;
-				const ldy = n.y - n2.y;
-				const ld  = Math.hypot(ldx, ldy);
-				if (ld < maxDist) {
-					const a = (1 - ld / maxDist) * lineAlpha;
-					ctx.beginPath();
-					ctx.moveTo(n.x, n.y);
-					ctx.lineTo(n2.x, n2.y);
-					ctx.strokeStyle = accentRgba(a);
-					ctx.lineWidth = 0.6;
-					ctx.stroke();
-				}
-			}
-		}
+			ctx.save();
+			ctx.translate(p.x, p.y);
+			ctx.rotate(p.rot * t);
+			ctx.globalAlpha = a;
+			ctx.fillStyle = accentRgba(1);
+			ctx.font = `300 ${p.size}px 'Inter', sans-serif`;
+			ctx.letterSpacing = '0.05em';
+			ctx.textAlign = 'center';
+			ctx.textBaseline = 'middle';
+			ctx.fillText(p.word, 0, 0);
+			ctx.restore();
+		});
 
 		requestAnimationFrame(draw);
 	}
 
 	window.addEventListener('resize', init, { passive: true });
 	window.addEventListener('mousemove', e => { mouseX = e.clientX; mouseY = e.clientY; }, { passive: true });
-
-	// Re-read accent when palette buttons are clicked
 	document.addEventListener('click', e => {
-		if (e.target.closest('.palette-btn, .theme-toggle, #theme-btn')) {
-			setTimeout(readAccent, 50);
-		}
+		if (e.target.closest('.palette-btn, .theme-toggle, #theme-btn')) setTimeout(readAccent, 50);
 	});
 
 	init();
