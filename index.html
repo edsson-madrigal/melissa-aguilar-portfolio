@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Melissa Aguilar Cuevas — Coordinadora de Marca | Marketing | UI Designer</title>
+
+	<!-- Primary SEO -->
+	<meta name="description"
+		content="Melissa Aguilar Cuevas — Coordinadora de marca con más de 8 años de experiencia en branding, marketing y UI/UX. Docente universitaria en UVAQ, Morelia, Michoacán." />
+	<meta name="keywords"
+		content="Melissa Aguilar Cuevas, Coordinadora de Marca, Marketing, UI Designer, UX, Social Media, Branding, Morelia, Michoacán, UVAQ, Rome Rock, Adhesivos NASA" />
+	<meta name="author" content="Melissa Aguilar Cuevas" />
+	<meta name="robots" content="index, follow" />
+	<meta name="theme-color" content="#e91e8c" />
+	<link rel="canonical" href="https://melissaaguilar.me" />
+	<meta property="og:url" content="https://melissaaguilar.me" />
+	<meta property="og:image"
+		content="https://media.licdn.com/dms/image/v2/D4D03AQEtW9BZ4325Dw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1697069427477?e=1776297600&v=beta&t=vXLZsKTmsNNOGjawc1fqgTuht1__VqRKUCygaB8JWEU" />
+
+	<!-- Open Graph (Facebook, LinkedIn) -->
+	<meta property="og:type" content="profile" />
+	<meta property="og:title" content="Melissa Aguilar Cuevas — Coordinadora de Marca" />
+	<meta property="og:description"
+		content="Brand Coordinator at Adhesivos NASA, UI Designer at Rome Rock, Academic Coordinator and Professor at UVAQ. Based in Morelia, Michoacán." />
+	<meta property="og:locale" content="en_US" />
+	<meta property="profile:first_name" content="Melissa" />
+	<meta property="profile:last_name" content="Aguilar Cuevas" />
+
+	<!-- Twitter Card -->
+	<meta name="twitter:card" content="summary" />
+	<meta name="twitter:title" content="Melissa Aguilar Cuevas — Coordinadora de Marca" />
+	<meta name="twitter:description"
+		content="Brand Coordinator at Adhesivos NASA, UI Designer at Rome Rock, Academic Coordinator and Professor at UVAQ. Based in Morelia, Michoacán." />
+
+	<!-- Structured Data (JSON-LD) -->
+	<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Melissa Aguilar Cuevas",
+    "jobTitle": "Coordinadora de Marca",
+    "worksFor": {
+      "@type": "Organization",
+      "name": "Adhesivos NASA"
+    },
+    "address": { "@type": "PostalAddress", "addressCountry": "MX", "addressRegion": "Michoacán" },
+    "description": "Coordinadora de marca con 8+ años de experiencia en branding, marketing digital y UI/UX. Docente y coordinadora académica en UVAQ, Morelia."
+  }
+  </script>
+
+	<link rel="icon" type="image/svg+xml"
+		href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='18' fill='%23e91e8c'/><text x='50' y='72' font-size='68' font-family='monospace' font-weight='bold' fill='white' text-anchor='middle'>M</text></svg>">
+	<!-- Cloudflare Turnstile (only on real domains, not local file://) -->
+	<script>if (location.protocol !== 'file:') { var s = document.createElement('script'); s.src = 'https://challenges.cloudflare.com/turnstile/v0/api.js'; s.async = true; s.defer = true; document.head.appendChild(s); }</script>
+	<link rel="preconnect" href="https://fonts.googleapis.com" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+	<link
+		href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap"
+		rel="stylesheet" />
+	<link rel="stylesheet" href="css/styles.css" />
+</head>
+
+<body>
+
+	<!-- ═══ ANIMATED BACKGROUND ═══ -->
+	<div class="bg-aura" aria-hidden="true">
+		<div class="bg-aura-blob bg-aura-blob--1"></div>
+		<div class="bg-aura-blob bg-aura-blob--2"></div>
+		<div class="bg-aura-blob bg-aura-blob--3"></div>
+	</div>
+	<canvas id="bg-canvas" aria-hidden="true"></canvas>
+
+	<!-- ═══ NAV ═══ -->
+	<nav>
+		<div class="nav-logo">MelissaAguilar<span>.</span>me</div>
+		<ul class="nav-links">
+			<li><a href="#about" data-i18n="nav.about">About</a></li>
+			<li><a href="#experience" data-i18n="nav.experience">Experience</a></li>
+			<li><a href="#skills" data-i18n="nav.skills">Skills</a></li>
+			<li><a href="#education" data-i18n="nav.education">Education</a></li>
+
+			<li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
+		</ul>
+
+		<div class="nav-controls">
+			<!-- Color palettes -->
+			<div class="palette-picker" title="Switch color palette">
+				<button class="palette-btn active" data-palette="" style="background:#e91e8c" title="Rose Pink"></button>
+				<button class="palette-btn" data-palette="rose" style="background:#f43f5e" title="Deep Rose"></button>
+			</div>
+			<select id="lang-select" title="Language / Idioma">
+				<option value="en">🇺🇸 EN</option>
+				<option value="es">🇲🇽 ES</option>
+				<option value="fr">🇫🇷 FR</option>
+				<option value="de">🇩🇪 DE</option>
+				<option value="ja">🇯🇵 JA</option>
+			</select>
+			<button class="theme-toggle" id="theme-btn" aria-label="Toggle theme" title="Light / Dark">🌙</button>
+		</div>
+		<button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">☰</button>
+	</nav>
+
+	<!-- ═══ HERO ═══ -->
+	<section id="about" style="padding:0;max-width:none">
+		<div id="hero">
+			<div class="hero-glow"></div>
+			<div class="hero-glow-2"></div>
+			<div class="hero-inner reveal">
+
+				<!-- Avatar -->
+				<div class="hero-avatar-wrap">
+					<div class="hero-avatar-ring"></div>
+					<img class="hero-avatar"
+						src="https://media.licdn.com/dms/image/v2/D4D03AQEtW9BZ4325Dw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1697069427477?e=1776297600&v=beta&t=vXLZsKTmsNNOGjawc1fqgTuht1__VqRKUCygaB8JWEU"
+						onerror="this.src='https://ui-avatars.com/api/?name=Melissa+Aguilar&background=e91e8c&color=fff&size=200'"
+						alt="Melissa Aguilar" loading="eager" />
+				</div>
+
+
+				<h1 class="hero-name"><span class="term-prompt">>/&nbsp;</span><span id="hero-typed"></span><span
+						class="term-cursor" id="hero-cursor">_</span></h1>
+
+				<p class="hero-title">
+					<strong id="rotating-title">Coordinadora de Marca</strong><br>
+					Marketing &nbsp;·&nbsp; UI/UX &nbsp;·&nbsp; Branding &nbsp;·&nbsp; Professor &nbsp;·&nbsp; Social Media
+				</p>
+
+				<div class="hero-certs">
+					<span class="cert-pill">UI/UX Design</span>
+					<span class="cert-pill">Branding</span>
+					<span class="cert-pill">Social Media</span>
+					<span class="cert-pill">Marketing Digital</span>
+					<span class="cert-pill">Professor UVAQ</span>
+				</div>
+
+				<p class="hero-desc" data-i18n-html="hero.desc">
+					Coordinadora de marca con <strong style="color:var(--text)">8+ años</strong> liderando la identidad visual y
+					estrategia de marketing en <strong style="color:var(--text)">Adhesivos NASA</strong> 🎨, UI Designer en <strong style="color:var(--text)">Rome Rock</strong> 💻, coordinadora académica y profesora universitaria
+					en <strong style="color:var(--text)">UVAQ</strong> 🎓. Con experiencia en <strong
+						style="color:var(--text)">marketing digital, publicidad, relaciones públicas</strong> y estrategia de marca
+					📣. Apasionada de crear experiencias visuales memorables y conectar marcas con sus audiencias en <strong
+						style="color:var(--text)">Morelia, Michoacán</strong> 🌺.
+				</p>
+
+
+
+				<div class="hero-btns">
+					<a href="https://www.linkedin.com/in/maguilarcuevas/" target="_blank" rel="noopener" class="btn btn-primary" data-i18n="hero.btn_linkedin">LinkedIn ↗</a>
+				</div>
+			</div>
+		</div>
+	</section>
+
+
+	<!-- ═══ EXPERIENCE ═══ -->
+	<section id="experience">
+		<div class="section-header reveal">
+			<div class="section-label" data-i18n="exp.label">// career</div>
+			<h2 class="section-title" data-i18n="exp.title">Experience</h2>
+		</div>
+		<div class="timeline">
+
+			<div class="timeline-item reveal">
+				<div class="timeline-company">Rome Rock</div>
+				<div class="timeline-role" data-i18n="exp.job1.role">UI Designer</div>
+				<div class="timeline-period" data-i18n="exp.job1.period">Jan 2022 – Present · 3+ years</div>
+				<ul class="timeline-bullets" data-i18n-html="exp.job1.bullets">
+					<li>Led the end-to-end design of digital interfaces, ensuring intuitive and visually compelling user experiences.</li>
+					<li>Applied user-centered design methodologies to define interaction flows, wireframes, and high-fidelity prototypes in Figma.</li>
+					<li>Collaborated with development teams to guarantee faithful implementation of design systems.</li>
+				</ul>
+			</div>
+
+			<div class="timeline-item reveal">
+				<div class="timeline-company">Adhesivos NASA · Michoacán, Mexico</div>
+				<div class="timeline-role" data-i18n="exp.job2.role">Brand Coordinator</div>
+				<div class="timeline-period" data-i18n="exp.job2.period">Jan 2018 – Present · 7+ years</div>
+				<ul class="timeline-bullets" data-i18n-html="exp.job2.bullets">
+					<li>Spearheaded the comprehensive brand strategy for a leading adhesives manufacturer, overseeing all visual identity and communications assets.</li>
+					<li>Designed and executed integrated marketing campaigns across digital and traditional channels, reinforcing brand positioning in the Mexican market.</li>
+					<li>Established brand guidelines unifying visual identity across packaging, advertising, and corporate communications.</li>
+					<li>Managed creative briefs, vendor relationships, and production timelines to ensure consistent brand delivery across all touchpoints.</li>
+				</ul>
+			</div>
+
+			<div class="timeline-item reveal">
+				<div class="timeline-company">Escuela de Mercadotecnia y Ventas UVAQ · Morelia, Michoacán</div>
+				<div class="timeline-role" data-i18n="exp.job3.role">Academic Coordinator</div>
+				<div class="timeline-period" data-i18n="exp.job3.period">Jan 2017 – Present · 8+ years</div>
+				<ul class="timeline-bullets" data-i18n-html="exp.job3.bullets">
+					<li>Directed academic operations of the School of Marketing &amp; Sales at UVAQ, overseeing curriculum design, faculty coordination, and institutional quality standards.</li>
+					<li>Developed updated study plans aligned with current industry trends in marketing, digital media, and strategic communication.</li>
+					<li>Fostered partnerships with industry leaders to enrich academic programs with real-world case studies and guest lectures.</li>
+				</ul>
+			</div>
+
+			<div class="timeline-item reveal">
+				<div class="timeline-company">Universidad Vasco de Quiroga, A.C. · Morelia, Michoacán</div>
+				<div class="timeline-role" data-i18n="exp.job4.role">University Professor</div>
+				<div class="timeline-period" data-i18n="exp.job4.period">Jan 2016 – Present · 9+ years</div>
+				<ul class="timeline-bullets" data-i18n-html="exp.job4.bullets">
+					<li>Delivered undergraduate courses in marketing, consumer behavior, strategic communication, and brand management.</li>
+					<li>Designed pedagogical materials grounded in contemporary marketing practice, bridging theory with applied industry scenarios.</li>
+					<li>Mentored students through thesis projects, field practicums, and professional development initiatives.</li>
+				</ul>
+			</div>
+
+			<div class="timeline-item reveal">
+				<div class="timeline-company">Essencia Marketing &amp; Comunicación · Mexico</div>
+				<div class="timeline-role" data-i18n="exp.job5.role">Strategy Lead</div>
+				<div class="timeline-period" data-i18n="exp.job5.period">Jun 2014 – Present · 11+ years</div>
+				<ul class="timeline-bullets" data-i18n-html="exp.job5.bullets">
+					<li>Designed and executed omnichannel marketing strategies for a diverse client portfolio, driving measurable growth in brand awareness and engagement.</li>
+					<li>Managed social media campaigns and content calendars, consistently surpassing KPI benchmarks across platforms.</li>
+					<li>Provided strategic consulting on brand positioning, audience segmentation, and competitive differentiation.</li>
+				</ul>
+			</div>
+
+			<div class="timeline-item reveal">
+				<div class="timeline-company">Natural English</div>
+				<div class="timeline-role" data-i18n="exp.job6.role">Advertising Advisor</div>
+				<div class="timeline-period" data-i18n="exp.job6.period">Oct 2013 – Jan 2014 · 4 months</div>
+				<ul class="timeline-bullets" data-i18n-html="exp.job6.bullets">
+					<li>Developed targeted advertising strategies to expand enrollment and strengthen brand recognition for a language-education institution.</li>
+					<li>Produced creative briefs and supervised the execution of promotional materials across print and digital media.</li>
+				</ul>
+			</div>
+
+			<div class="timeline-item reveal">
+				<div class="timeline-company">AulaDiser.com® Morelia</div>
+				<div class="timeline-role" data-i18n="exp.job7.role">Marketing Intern</div>
+				<div class="timeline-period" data-i18n="exp.job7.period">Feb 2013 – Sep 2013 · 8 months</div>
+				<ul class="timeline-bullets" data-i18n-html="exp.job7.bullets">
+					<li>Supported the marketing and communications team of an online educational platform, contributing to content creation and digital outreach.</li>
+					<li>Assisted in the development of promotional campaigns that increased platform visibility and user engagement.</li>
+				</ul>
+			</div>
+
+			<div class="timeline-item reveal">
+				<div class="timeline-company">IMAGINA</div>
+				<div class="timeline-role" data-i18n="exp.job8.role">Finance &amp; Operations Lead</div>
+				<div class="timeline-period" data-i18n="exp.job8.period">Sep 2011 – Aug 2013 · 2 years</div>
+				<ul class="timeline-bullets" data-i18n-html="exp.job8.bullets">
+					<li>Managed financial planning, budgeting, and resource allocation for a student entrepreneurship project, ensuring fiscal sustainability of all activities.</li>
+					<li>Coordinated cross-functional teams to deliver initiatives on time and within budget.</li>
+				</ul>
+			</div>
+
+		</div>
+	</section>
+
+	<div class="section-divider"></div>
+
+	<!-- ═══ SKILLS ═══ -->
+	<section id="skills">
+		<div class="section-header reveal">
+			<div class="section-label" data-i18n="skills.label">// expertise</div>
+			<h2 class="section-title" data-i18n="skills.title">Skills</h2>
+		</div>
+		<div class="skills-grid">
+
+			<div class="skill-card reveal">
+				<div class="skill-card-icon">🎨</div>
+				<div class="skill-card-title" data-i18n="skills.cloud">UI/UX Design</div>
+				<div class="skill-tags" data-i18n-html="skills.cloud.tags">
+					<span class="skill-tag">UI Design</span>
+					<span class="skill-tag">UX Research</span>
+					<span class="skill-tag">Figma</span>
+					<span class="skill-tag">Wireframing</span>
+					<span class="skill-tag">Prototyping</span>
+					<span class="skill-tag">Web Design</span>
+					<span class="skill-tag">Mobile Design</span>
+				</div>
+			</div>
+
+			<div class="skill-card reveal">
+				<div class="skill-card-icon">📣</div>
+				<div class="skill-card-title" data-i18n="skills.frontend">Digital Marketing</div>
+				<div class="skill-tags" data-i18n-html="skills.frontend.tags">
+					<span class="skill-tag">Social Media Marketing</span>
+					<span class="skill-tag">Content Strategy</span>
+					<span class="skill-tag">SEO</span>
+					<span class="skill-tag">Digital Advertising</span>
+					<span class="skill-tag">Product Marketing</span>
+					<span class="skill-tag">Campaign Management</span>
+				</div>
+			</div>
+
+			<div class="skill-card reveal">
+				<div class="skill-card-icon">💼</div>
+				<div class="skill-card-title" data-i18n="skills.backend">Branding &amp; Communication</div>
+				<div class="skill-tags" data-i18n-html="skills.backend.tags">
+					<span class="skill-tag">Brand Identity</span>
+					<span class="skill-tag">Public Relations</span>
+					<span class="skill-tag">Advertising</span>
+					<span class="skill-tag">Institutional Communication</span>
+					<span class="skill-tag">Brand Strategy</span>
+				</div>
+			</div>
+
+			<div class="skill-card reveal">
+				<div class="skill-card-icon">📊</div>
+				<div class="skill-card-title" data-i18n="skills.mobile">Strategic Marketing</div>
+				<div class="skill-tags" data-i18n-html="skills.mobile.tags">
+					<span class="skill-tag">Client Segmentation</span>
+					<span class="skill-tag">Market Research</span>
+					<span class="skill-tag">Marketing Plan</span>
+					<span class="skill-tag">Project Management</span>
+					<span class="skill-tag">Economics</span>
+					<span class="skill-tag">KPI Analysis</span>
+				</div>
+			</div>
+
+		</div>
+	</section>
+
+	<div class="section-divider"></div>
+
+	<!-- ═══ EDUCATION ═══ -->
+	<section id="education">
+		<div class="section-header reveal">
+			<div class="section-label" data-i18n="edu.label">// academic</div>
+			<h2 class="section-title" data-i18n="edu.title">Education</h2>
+		</div>
+		<div class="edu-grid">
+			<div class="edu-card reveal">
+				<div class="edu-degree" data-i18n="edu.d1">Maestría en Comunicación</div>
+				<div class="edu-school">Universidad Vasco de Quiroga, A.C.</div>
+				<div class="edu-period">2014 – 2016 &nbsp;·&nbsp; Terminal en Administración de la Imagen Institucional
+					&nbsp;·&nbsp; Titulación con mención honorífica</div>
+			</div>
+			<div class="edu-card reveal">
+				<div class="edu-degree" data-i18n="edu.d2">Intercambio Universitario</div>
+				<div class="edu-school">Universidad de Santiago de Compostela &nbsp;·&nbsp; Facultad Económica Empresarial</div>
+				<div class="edu-period">2012 – 2013</div>
+			</div>
+			<div class="edu-card reveal">
+				<div class="edu-degree" data-i18n="edu.d3">Licenciatura en Mercadotecnia y Ventas</div>
+				<div class="edu-school">Universidad Vasco de Quiroga, A.C.</div>
+				<div class="edu-period">2010 – 2013 &nbsp;·&nbsp; Miembro de la sociedad de alumnos "Imagina"; Grupo escolar de
+					jazz</div>
+			</div>
+			<div class="edu-card reveal">
+				<div class="edu-degree">Complete Web &amp; Mobile Designer: UI/UX, Figma</div>
+				<div class="edu-school">Zero To Mastery Academy</div>
+				<div class="edu-period">Oct 2021</div>
+			</div>
+		</div>
+	</section>
+
+
+	<!-- ═══ CONTACT ═══ -->
+	<section id="contact">
+		<div class="section-header reveal">
+			<div class="section-label" data-i18n="contact.label">// connect</div>
+			<h2 class="section-title" data-i18n="contact.title">Get in Touch</h2>
+			<p style="color:var(--muted);margin-top:0.75rem" data-i18n="contact.subtitle">Disponible para proyectos de diseño,
+				consultoría de marca y colaboraciones.</p>
+		</div>
+		<div class="contact-grid reveal">
+			<a href="https://www.linkedin.com/in/maguilarcuevas/" target="_blank" rel="noopener" class="contact-card">
+				<span class="contact-icon">💼</span>
+				<div>
+					<div class="contact-label" data-i18n="contact.linkedin">LinkedIn</div>
+					<div class="contact-value">linkedin.com/in/maguilarcuevas</div>
+				</div>
+			</a>
+		</div>
+	</section>
+
+	<footer>
+		<p><span data-i18n-html="footer.built">Hecho con ♥ &nbsp;·&nbsp; Melissa Aguilar &copy; 2026
+				&nbsp;·&nbsp;</span>
+			<span id="rotating-title-footer">Coordinadora de Marca</span>
+		</p>
+	</footer>
+
+	<script src="js/js.js"></script>
+
+</body>
+
+</html>
